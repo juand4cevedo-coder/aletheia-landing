@@ -1,0 +1,191 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--aletheia-gradient-ink);
+  color: var(--color-text-on-dark);
+  overflow: hidden;
+  padding: calc(var(--header-h) + var(--space-5)) 0 var(--space-6);
+  text-align: center;
+}
+/* rejilla diagonal animada (firma de marca, opacidad muy baja) */
+.grid {
+  position: absolute;
+  inset: -50%;
+  background-image:
+    linear-gradient(135deg, rgba(28, 133, 189, 0.06) 1px, transparent 1px),
+    linear-gradient(45deg, rgba(28, 133, 189, 0.04) 1px, transparent 1px);
+  background-size: 70px 70px;
+  animation: drift 30s linear infinite;
+  mask-image: radial-gradient(circle at 50% 42%, #000 0%, transparent 70%);
+}
+@keyframes drift {
+  from {
+    transform: translate(0, 0);
+  }
+  to {
+    transform: translate(70px, 70px);
+  }
+}
+
+.glow {
+  position: absolute;
+  top: 8%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  height: 70vw;
+  max-width: 760px;
+  max-height: 760px;
+  background: radial-gradient(
+    circle,
+    rgba(28, 133, 189, 0.22) 0%,
+    transparent 64%
+  );
+  filter: blur(10px);
+  pointer-events: none;
+}
+
+.content {
+  position: relative;
+  max-width: 760px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Lockup de marca centrado */
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.6rem;
+  animation: rise var(--dur-slow) var(--ease) both;
+}
+.mark {
+  height: 60px;
+  width: auto;
+  filter: drop-shadow(0 8px 30px rgba(28, 133, 189, 0.35));
+}
+.wordmark {
+  font-size: 1.7rem;
+  font-weight: 700;
+  letter-spacing: 0.34em;
+  padding-left: 0.34em;
+  color: #eaf1f8;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.4rem 0.95rem;
+  border-radius: var(--radius-pill);
+  background: rgba(28, 133, 189, 0.12);
+  border: 1px solid rgba(28, 133, 189, 0.32);
+  color: var(--aletheia-sky);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  animation: rise var(--dur-slow) 100ms var(--ease) both;
+}
+.title {
+  font-size: var(--fs-3xl);
+  font-weight: 800;
+  margin: 1.4rem 0 0;
+  animation: rise var(--dur-slow) 200ms var(--ease) both;
+}
+.accent {
+  background: linear-gradient(120deg, #5bb6e8, #1c85bd 55%, #2d5c97);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.sub {
+  font-size: var(--fs-md);
+  color: var(--color-text-on-dark-muted);
+  max-width: 54ch;
+  margin: 1.5rem auto 0;
+  line-height: 1.75;
+  animation: rise var(--dur-slow) 300ms var(--ease) both;
+}
+.actions {
+  display: flex;
+  gap: 0.9rem;
+  margin-top: 2.4rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: rise var(--dur-slow) 400ms var(--ease) both;
+}
+
+/* Pilares: tarjeta centrada con separadores nítidos y buen contraste */
+.stats {
+  display: inline-flex;
+  align-items: stretch;
+  gap: 0;
+  margin: 3.2rem auto 0;
+  padding: 1.1rem 0.6rem;
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(232, 238, 246, 0.1);
+  backdrop-filter: blur(8px);
+  animation: rise var(--dur-slow) 500ms var(--ease) both;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0.2rem 1.7rem;
+}
+.stat dt {
+  font-family: var(--font-mono);
+  font-weight: 600;
+  color: var(--aletheia-sky);
+  font-size: var(--fs-md);
+  letter-spacing: 0.02em;
+}
+.stat dd {
+  margin: 0;
+  color: #b9c6da;
+  font-size: var(--fs-sm);
+}
+.divider {
+  width: 1px;
+  background: rgba(232, 238, 246, 0.14);
+  align-self: stretch;
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 640px) {
+  .stats {
+    flex-direction: column;
+    gap: 0;
+    padding: 0.4rem 1.2rem;
+    width: 100%;
+    max-width: 320px;
+  }
+  .stat {
+    padding: 0.9rem 0;
+  }
+  .divider {
+    width: 100%;
+    height: 1px;
+  }
+  .mark {
+    height: 50px;
+  }
+  .wordmark {
+    font-size: 1.4rem;
+  }
+}
