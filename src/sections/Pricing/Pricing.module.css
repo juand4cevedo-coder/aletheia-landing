@@ -1,0 +1,111 @@
+.pricing {
+  background: var(--surface-0);
+}
+.title {
+  font-size: var(--fs-2xl);
+}
+.lead {
+  color: var(--color-text-muted);
+  font-size: var(--fs-md);
+  margin-top: var(--space-2);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.4rem;
+  align-items: stretch;
+}
+
+.card {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-2);
+  border-color: var(--aletheia-sky);
+}
+.featured {
+  border-color: transparent;
+  background:
+    linear-gradient(var(--surface-1), var(--surface-1)) padding-box,
+    var(--aletheia-gradient-brand) border-box;
+  border: 1.5px solid transparent;
+  box-shadow: var(--shadow-glow);
+}
+.ribbon {
+  position: absolute;
+  top: -12px;
+  left: 2rem;
+  background: var(--aletheia-gradient-cta);
+  color: var(--aletheia-white);
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  padding: 0.3rem 0.9rem;
+  border-radius: var(--radius-pill);
+}
+.planName {
+  font-size: var(--fs-lg);
+}
+.note {
+  color: var(--color-text-muted);
+  font-size: var(--fs-sm);
+  margin-top: 0.3rem;
+}
+.price {
+  display: flex;
+  align-items: baseline;
+  gap: 2px;
+  margin: 1.4rem 0 0.4rem;
+  font-size: var(--fs-2xl);
+  font-weight: 800;
+  color: var(--color-text);
+}
+.currency {
+  font-size: var(--fs-lg);
+}
+.period {
+  font-size: var(--fs-base);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+.features {
+  list-style: none;
+  padding: 0;
+  margin: 1.4rem 0 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  flex-grow: 1;
+}
+.features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  color: var(--color-text);
+  font-size: var(--fs-sm);
+}
+.features svg {
+  color: var(--aletheia-emerald);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}

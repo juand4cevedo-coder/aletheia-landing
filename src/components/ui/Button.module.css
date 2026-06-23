@@ -1,0 +1,65 @@
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.5rem;
+  font-size: var(--fs-base);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  border-radius: var(--radius-pill);
+  transition:
+    transform var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease),
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    color var(--dur) var(--ease);
+  white-space: nowrap;
+}
+.btn :global(svg) {
+  transition: transform var(--dur) var(--ease);
+}
+.btn:hover :global(svg) {
+  transform: translateX(3px);
+}
+.full {
+  width: 100%;
+}
+
+/* Primario: gradiente de marca (firma del logo) */
+.primary {
+  color: var(--aletheia-white);
+  background: var(--aletheia-gradient-cta);
+  box-shadow: var(--shadow-glow);
+}
+.primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 22px 70px rgba(28, 133, 189, 0.38);
+}
+.primary:active {
+  transform: translateY(0);
+}
+
+/* Secundario: contorno sobrio */
+.secondary {
+  color: var(--color-text);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+}
+.secondary:hover {
+  border-color: var(--aletheia-sky);
+  color: var(--color-action);
+  transform: translateY(-2px);
+}
+
+/* Ghost: sobre fondo oscuro */
+.ghost {
+  color: var(--color-text-on-dark);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+}
+.ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--aletheia-sky);
+  transform: translateY(-2px);
+}

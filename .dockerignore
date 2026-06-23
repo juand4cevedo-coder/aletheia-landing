@@ -1,0 +1,9 @@
+node_modules
+dist
+.git
+.github
+_.log
+.env
+.env._
+README.md
+DEPLOY-Y-GITFLOW.md

@@ -1,0 +1,123 @@
+/* ============================================================
+   ALETHEIA · Design Tokens
+   Fuente única de verdad. Ningún componente usa valores
+   hardcodeados: todo se referencia con var(--aletheia-*).
+   Paleta MUESTREADA del logo real (degradado cerúleo -> navy).
+   ============================================================ */
+:root {
+  /* --- Color primitivo (extraído del logo) --- */
+  --aletheia-sky: #1c85bd; /* punta clara del degradado de la cinta */
+  --aletheia-azure: #1668a0; /* azul medio de la cinta */
+  --aletheia-azure-deep: #11537f; /* azul profundo para texto/acción legible */
+  --aletheia-navy: #193459; /* barra transversal del logo */
+  --aletheia-ink: #12172b; /* wordmark del logo · texto máxima jerarquía */
+  --aletheia-obsidian: #0b1120; /* fondo modo oscuro (armoniza con el ink) */
+  --aletheia-obsidian-2: #0f1729; /* superficie elevada sobre obsidian */
+
+  --aletheia-slate-50: #f5f8fc; /* fondo claro */
+  --aletheia-slate-100: #eaf0f7; /* superficie clara / bordes suaves */
+  --aletheia-slate-200: #d6e0ec; /* bordes en claro */
+  --aletheia-slate-500: #5a6b86; /* texto secundario en claro */
+  --aletheia-slate-400: #8a99b3; /* texto secundario en oscuro */
+
+  --aletheia-emerald: #059669; /* estado verificado / integridad confirmada */
+  --aletheia-emerald-2: #10b981;
+  --aletheia-crimson: #dc2626; /* estado alterado / alerta de seguridad */
+  --aletheia-amber: #d97706; /* estado pendiente */
+
+  --aletheia-white: #ffffff;
+
+  /* --- Gradiente de marca (firma visual del logo) --- */
+  --aletheia-gradient-brand: linear-gradient(
+    135deg,
+    #1c85bd 0%,
+    #1668a0 46%,
+    #193459 100%
+  );
+  --aletheia-gradient-cta: linear-gradient(135deg, #1c85bd 0%, #11537f 100%);
+  --aletheia-gradient-ink: linear-gradient(180deg, #0b1120 0%, #0f1729 100%);
+  /* separadores sutiles entre secciones */
+  --aletheia-fade-to-dark: linear-gradient(
+    180deg,
+    rgba(11, 17, 32, 0) 0%,
+    #0b1120 100%
+  );
+  --aletheia-fade-to-light: linear-gradient(
+    180deg,
+    rgba(245, 248, 252, 0) 0%,
+    #f5f8fc 100%
+  );
+
+  /* --- Tokens semánticos (los que consumen los componentes) --- */
+  --color-bg: var(--aletheia-slate-50);
+  --color-bg-dark: var(--aletheia-obsidian);
+  --color-surface: var(--aletheia-white);
+  --color-surface-dark: var(--aletheia-obsidian-2);
+  
+  /* Superficies claras con diferencia MÍNIMA, para alternar secciones
+     sin que el cambio canse la vista (cambios casi imperceptibles). */
+  --surface-0: #ffffff;
+  --surface-1: #f6f9fc;
+  --surface-2: #eef3f9;
+  --color-text: var(--aletheia-ink);
+  --color-text-muted: var(--aletheia-slate-500);
+  --color-text-on-dark: #e8eef6;
+  --color-text-on-dark-muted: var(--aletheia-slate-400);
+  --color-border: var(--aletheia-slate-200);
+  --color-border-dark: rgba(232, 238, 246, 0.1);
+  --color-action: var(--aletheia-azure-deep);
+  --color-action-hover: var(--aletheia-navy);
+  --color-accent: var(--aletheia-sky);
+
+  /* --- Tipografía --- */
+  --font-sans:
+    "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono:
+    "JetBrains Mono", "SFMono-Regular", ui-monospace, "Courier New", monospace;
+  /* Escala Major Third (1.250) */
+  --fs-xs: 0.78rem;
+  --fs-sm: 0.875rem;
+  --fs-base: 1rem;
+  --fs-md: 1.125rem;
+  --fs-lg: 1.45rem;
+  --fs-xl: 1.95rem;
+  --fs-2xl: 2.55rem;
+  --fs-3xl: clamp(2.6rem, 6vw, 4.1rem);
+
+  /* --- Espaciado (base 8px) --- */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2rem;
+  --space-5: 3rem;
+  --space-6: 4rem;
+  --space-7: 6rem;
+  --space-8: 8rem;
+
+  /* --- Radios (suaves, estilo Apple, no extremos) --- */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* --- Elevación (sombras frías, muy sutiles) --- */
+  --shadow-1:
+    0 1px 2px rgba(18, 23, 43, 0.06), 0 4px 12px rgba(18, 23, 43, 0.05);
+  --shadow-2: 0 8px 30px rgba(18, 23, 43, 0.1);
+  --shadow-glow: 0 18px 60px rgba(28, 133, 189, 0.28);
+
+  /* --- Movimiento (mecánico, sin rebotes) --- */
+  --ease: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --dur: 360ms;
+  --dur-slow: 760ms;
+
+  /* --- Layout --- */
+  --max-width: 1180px;
+  --header-h: 68px;
+
+  /* --- z-index (escala por tokens, sin números mágicos) --- */
+  --z-base: 0;
+  --z-sticky: 200;
+  --z-header: 300;
+  --z-modal: 400;
+}
