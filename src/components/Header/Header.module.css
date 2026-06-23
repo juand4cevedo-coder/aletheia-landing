@@ -1,0 +1,110 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-header);
+  height: var(--header-h);
+  display: flex;
+  align-items: center;
+  transition:
+    background var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    backdrop-filter var(--dur) var(--ease);
+  border-bottom: 1px solid transparent;
+}
+.solid {
+  background: rgba(11, 17, 32, 0.72);
+  backdrop-filter: saturate(160%) blur(14px);
+  border-bottom-color: var(--color-border-dark);
+}
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: min(100% - 2.5rem, var(--max-width));
+}
+.brand {
+  display: flex;
+  align-items: center;
+}
+.logo {
+  height: 38px;
+  width: auto;
+}
+
+.nav {
+  display: flex;
+  gap: 1.6rem;
+}
+.link {
+  font-size: var(--fs-sm);
+  font-weight: 500;
+  color: var(--color-text-on-dark-muted);
+  position: relative;
+  transition: color var(--dur) var(--ease);
+}
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 2px;
+  width: 0;
+  background: var(--aletheia-gradient-cta);
+  border-radius: var(--radius-pill);
+  transition: width var(--dur) var(--ease);
+}
+.link:hover {
+  color: var(--color-text-on-dark);
+}
+.link:hover::after {
+  width: 100%;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.burger {
+  display: none;
+  color: var(--color-text-on-dark);
+  padding: 0.4rem;
+}
+
+.mobile {
+  position: absolute;
+  top: var(--header-h);
+  left: 0;
+  right: 0;
+  background: rgba(11, 17, 32, 0.96);
+  backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--color-border-dark);
+  padding: 1rem 1.25rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.mobileLink {
+  padding: 0.85rem 0.5rem;
+  color: var(--color-text-on-dark);
+  border-bottom: 1px solid var(--color-border-dark);
+}
+.mobileActions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+  .nav,
+  .actions {
+    display: none;
+  }
+  .burger {
+    display: inline-flex;
+  }
+}
